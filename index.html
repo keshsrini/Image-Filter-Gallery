@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section>
+        <h1>Image Gallery</h1>
+        <ul>
+            <li class="active">All</li>
+            <li>Food</li>
+            <li>Mountains</li>
+            <li>Wonders</li>
+            <li>Waterfalls</li>
+        </ul>
+
+        <div class="image">
+            <img src="C:\Users\banga\Downloads\food.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food1.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food2.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food3.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food4.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food5.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food6.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food7.jpeg"data-filter="food">
+            <img src="C:\Users\banga\Downloads\food8.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\food9.jpeg" data-filter="food">
+            <img src="C:\Users\banga\Downloads\m.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m1.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m3.jpeg"data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m4.jpeg"data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m5.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m6.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m7.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m8.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\m9.jpeg" data-filter="mountains">
+            <img src="C:\Users\banga\Downloads\ww.jpeg"data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww1.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww3.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww4.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww5.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww6.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww7.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww8.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\ww9.jpeg" data-filter="wonders">
+            <img src="C:\Users\banga\Downloads\w.jpeg"data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w1.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w2.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w3.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w4.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w5.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w6.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w7.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w8.jpeg" data-filter="waterfalls">
+            <img src="C:\Users\banga\Downloads\w9.jpeg" data-filter="waterfalls">
+        </div>
+    </section>
+
+    <script>
+        const liItem = document.querySelectorAll('ul li');
+        const imgItem = document.querySelectorAll('.image img');
+        
+        liItem.forEach(li => {
+            li.onclick = function() {
+            liItem.forEach(li => {
+                li.className ="";
+        
+            })
+            li.className = "active";
+
+            const value = li.textContent;
+            imgItem.forEach(img => {
+                img.style.display = 'none';
+                if (img.getAttribute('data-filter') == value.toLowerCase()|| value == "All"){
+                    img.style.display = 'block';
+                }
+
+            })
+            }
+
+        });
+
+    </script>
+</body>
+</html>
